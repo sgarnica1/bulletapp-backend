@@ -5,7 +5,7 @@ from rest_framework import serializers
 class PlanSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Plan
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'price']
 
 
 class ScheduleSerializer(serializers.HyperlinkedModelSerializer):

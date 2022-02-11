@@ -4,7 +4,7 @@ from .models import Plan, Schedule, Athlete, Payment
 
 
 class PlanView(ModelViewSet):
-    queryset = Plan.objects.all().order_by('-id')
+    queryset = Plan.objects.all().order_by('id')
     serializer_class = PlanSerializer
 
 
