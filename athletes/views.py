@@ -21,3 +21,10 @@ class AthleteView(ModelViewSet):
 class PaymentView(ModelViewSet):
     queryset = Payment.objects.all().order_by('-id')
     serializer_class = PaymentSerializer
+
+
+class PlanAthletesView(ModelViewSet):
+    serializer_class = AthleteSerializer
+
+    def get_queryset(self):
+        return Athlete.objects.filter(plan=self.kwargs['plan_pk'])
