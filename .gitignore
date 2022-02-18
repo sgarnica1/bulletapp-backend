@@ -5,4 +5,12 @@ __pycache__/
 # Virtual environment
 venv/
 
+# Security
+.env
+
+# DB
+db.sqlite3
+
+
+# Other
 notes.txt
