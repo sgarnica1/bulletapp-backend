@@ -9,7 +9,7 @@ class PlanView(ModelViewSet):
 
 
 class ScheduleView(ModelViewSet):
-    queryset = Schedule.objects.all().order_by('-id')
+    queryset = Schedule.objects.all().order_by('hour')
     serializer_class = ScheduleSerializer
 
 

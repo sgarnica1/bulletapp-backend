@@ -21,8 +21,8 @@ class Schedule(models.Model):
 class Athlete(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=15, unique=True)
     plan = models.ForeignKey(Plan, on_delete=models.SET_NULL,
                              null=True, blank=False, related_name='plan')
     beneficiary = models.OneToOneField(
