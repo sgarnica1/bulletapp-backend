@@ -5,4 +5,8 @@ __pycache__/
 # Virtual environment
 venv/
 
+# Security
+.env
+
+# Other
 notes.txt
