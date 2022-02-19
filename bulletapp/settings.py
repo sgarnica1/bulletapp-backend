@@ -81,17 +81,17 @@ WSGI_APPLICATION = 'bulletapp.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': django.db.backends.mysql,
-        'USER': os.environ['MYSQL_USER'],
-        'PASSWORD': os.environ['MYSQL_PASSWORD'],
-        'HOST': os.environ['MYSQL_HOST'],
-        'NAME': os.environ['MYSQL_NAME']
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER': os.environ['MYSQL_USER'],
+    #     'PASSWORD': os.environ['MYSQL_PASSWORD'],
+    #     'HOST': os.environ['MYSQL_HOST'],
+    #     'NAME': os.environ['MYSQL_NAME']
+    # }
 }
 
 
