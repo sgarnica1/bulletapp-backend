@@ -1,5 +1,3 @@
-from cgitb import lookup
-from email.mime import base
 from django.urls import path, include
 from .views import PlanView, ScheduleView, AthleteView, PaymentView, PlanAthletesView, MyTokenObtainPairView
 from rest_framework_nested import routers

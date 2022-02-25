@@ -6,6 +6,13 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
+from django.shortcuts import redirect
+
+
+def redirect_view(request):
+    response = redirect('/api')
+    return response
+
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
