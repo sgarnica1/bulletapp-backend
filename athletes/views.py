@@ -8,6 +8,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 
 from django.shortcuts import redirect
 
+import re
+
 
 def redirect_view(request):
     response = redirect('/api')
@@ -51,8 +53,15 @@ class AthleteView(ModelViewSet):
 
 class PaymentView(ModelViewSet):
     permission_classes = [IsAuthenticated]
-    queryset = Payment.objects.all().order_by('-id')
     serializer_class = PaymentSerializer
+    queryset = Payment.objects.all().order_by('-id')
+
+    def get_queryset(self):
+        queryset = Payment.objects.all().order_by('-id')
+        id = self.request.query_params.get('id')
+        if id is not None:
+            queryset = queryset.all().filter(id=id)
+        return queryset
 
 
 class PlanAthletesView(ModelViewSet):
