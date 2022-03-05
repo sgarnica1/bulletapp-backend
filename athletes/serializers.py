@@ -22,6 +22,7 @@ class AthleteSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PaymentSerializer(serializers.HyperlinkedModelSerializer):
+    # plan = PlanSerializer(many=False, read_only=True)
     class Meta:
         model = Payment
         fields = ['id', 'athlete', 'plan', 'quantity', 'beneficiary', 'date']
